@@ -6,7 +6,7 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 12:02:18 by alcarden          #+#    #+#             */
-/*   Updated: 2024/02/04 20:57:29 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/02/04 21:22:59 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,27 +37,27 @@ typedef struct s_stacks
 
 
 //main.c
-void	ft_init_stacks(t_stacks *stacks);
+void		ft_init_stacks(t_stacks *stacks);
 
 //moves.c
-void	ft_sb(t_stack **stack_b);
-void	ft_sa(t_stack **stack_a);
-void	ft_ss(t_stack **stack_a, t_stack **stack_b);
-void	ft_pa(t_stack **stack_a, t_stack **stack_b);
-void	ft_pb(t_stack **stack_a, t_stack **stack_b);
+t_stack		ft_sb(t_stack **stack_b);
+t_stack		ft_sa(t_stack **stack_a);
+t_stacks	ft_ss(t_stacks *stacks);
+t_stacks	ft_pa(t_stacks *stacks);
+t_stacks	ft_pb(t_stacks *stacks);
 
 //moves2.c
-void	ft_ra(t_stack **stack_a);
-void	ft_rb(t_stack **stack_b);
-void	ft_rr(t_stack **stack_a, t_stack **stack_b);
-void	ft_rra(t_stack **stack_a);
-void	ft_rrb(t_stack **stack_b);
+t_stack		ft_ra(t_stack **stack_a);
+t_stack		ft_rb(t_stack **stack_b);
+t_stacks	ft_rr(t_stacks *stacks);
+t_stack		ft_rra(t_stack **stack_a);
+t_stack		ft_rrb(t_stack **stack_b);
 
 //moves3.c
-void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
+t_stacks	ft_rrr(t_stacks *stacks);
 
 //parse.c
-void	ft_parse_args(int argc, char **argv, t_stack *stack_a);
+void		ft_parse_args(int argc, char **argv, t_stack *stack_a);
 
 //push_swap.c
 

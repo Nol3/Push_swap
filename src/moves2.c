@@ -6,13 +6,13 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 19:47:24 by alcarden          #+#    #+#             */
-/*   Updated: 2024/02/04 21:05:12 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/02/04 21:21:17 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./inc/push_swap.h"
 
-void	ft_ra(t_stack **stack_a)
+t_stack	ft_ra(t_stack **stack_a)
 {
 	t_stack	*tmp;
 	t_stack	*last;
@@ -28,9 +28,10 @@ void	ft_ra(t_stack **stack_a)
 		tmp->next = NULL;
 	}
 	ft_printf("ra\n");
+	return (**stack_a);
 }
 
-void	ft_rb(t_stack **stack_b)
+t_stack	ft_rb(t_stack **stack_b)
 {
 	t_stack	*tmp;
 	t_stack	*last;
@@ -46,16 +47,18 @@ void	ft_rb(t_stack **stack_b)
 		tmp->next = NULL;
 	}
 	ft_printf("rb\n");
+	return (**stack_b);
 }
 
-void	ft_rr(t_stack **stack_a, t_stack **stack_b)
+t_stacks	ft_rr(t_stacks *stacks)
 {
-	ft_ra(stack_a);
-	ft_rb(stack_b);
+	ft_ra(stacks->stack_a);
+	ft_rb(stacks->stack_b);
 	ft_printf("rr\n");
+	return (*stacks);
 }
 
-void	ft_rra(t_stack **stack_a)
+t_stack	ft_rra(t_stack **stack_a)
 {
 	t_stack	*tmp;
 	t_stack	*last;
@@ -71,9 +74,10 @@ void	ft_rra(t_stack **stack_a)
 		*stack_a = tmp;
 	}
 	ft_printf("rra\n");
+	return (**stack_a);
 }
 
-void	ft_rrb(t_stack **stack_b)
+t_stack	ft_rrb(t_stack **stack_b)
 {
 	t_stack	*tmp;
 	t_stack	*last;
@@ -89,4 +93,5 @@ void	ft_rrb(t_stack **stack_b)
 		*stack_b = tmp;
 	}
 	ft_printf("rrb\n");
+	return (**stack_b);
 }

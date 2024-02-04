@@ -6,13 +6,13 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 12:34:18 by alcarden          #+#    #+#             */
-/*   Updated: 2024/02/04 21:04:38 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/02/04 21:18:29 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./inc/push_swap.h"
 
-void	ft_sb(t_stack **stack_b)
+t_stack	ft_sb(t_stack **stack_b)
 {
 	t_stack	*tmp;
 
@@ -24,9 +24,10 @@ void	ft_sb(t_stack **stack_b)
 		*stack_b = tmp;
 	}
 	ft_printf("sb\n");
+	return (**stack_b);
 }
 
-void	ft_sa(t_stack **stack_a)
+t_stack	ft_sa(t_stack **stack_a)
 {
 	t_stack	*tmp;
 
@@ -38,39 +39,43 @@ void	ft_sa(t_stack **stack_a)
 		*stack_a = tmp;
 	}
 	ft_printf("sa\n");
+	return (**stack_a);
 }
 
-void	ft_ss(t_stack **stack_a, t_stack **stack_b)
+t_stacks	ft_ss(t_stacks *stacks)
 {
-	ft_sa(stack_a);
-	ft_sb(stack_b);
+	ft_sa(stacks->stack_a);
+	ft_sb(stacks->stack_b);
 	ft_printf("ss\n");
+	return (*stacks);
 }
 
-void	ft_pa(t_stack **stack_a, t_stack **stack_b)
+t_stacks	ft_pa(t_stacks *stacks)
 {
 	t_stack	*tmp;
 
-	if (stack_b && *stack_b)
+	if (stacks->stack_b)
 	{
-		tmp = *stack_b;
-		*stack_b = (*stack_b)->next;
-		tmp->next = *stack_a;
-		*stack_a = tmp;
+		tmp = stacks->stack_b;
+		stacks->stack_b = (stacks->stack_b)->next;
+		tmp->next = stacks->stack_a;
+		stacks->stack_a = tmp;
 	}
 	ft_printf("pa\n");
+	return (*stacks);
 }
 
-void	ft_pb(t_stack **stack_a, t_stack **stack_b)
+t_stacks	ft_pb(t_stacks *stacks)
 {
 	t_stack	*tmp;
 
-	if (stack_a && *stack_a)
+	if (stacks->stack_a)
 	{
-		tmp = *stack_a;
-		*stack_a = (*stack_a)->next;
-		tmp->next = *stack_b;
-		*stack_b = tmp;
+		tmp = stacks->stack_a;
+		stacks->stack_a = (stacks->stack_a)->next;
+		tmp->next = stacks->stack_b;
+		stacks->stack_b = tmp;
 	}
 	ft_printf("pb\n");
+	return (*stacks);
 }
