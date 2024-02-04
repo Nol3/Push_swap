@@ -6,7 +6,7 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 19:47:24 by alcarden          #+#    #+#             */
-/*   Updated: 2024/02/04 20:47:52 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/02/04 21:05:12 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	ft_ra(t_stack **stack_a)
 		last->next = tmp;
 		tmp->next = NULL;
 	}
+	ft_printf("ra\n");
 }
 
 void	ft_rb(t_stack **stack_b)
@@ -44,12 +45,14 @@ void	ft_rb(t_stack **stack_b)
 		last->next = tmp;
 		tmp->next = NULL;
 	}
+	ft_printf("rb\n");
 }
 
 void	ft_rr(t_stack **stack_a, t_stack **stack_b)
 {
 	ft_ra(stack_a);
 	ft_rb(stack_b);
+	ft_printf("rr\n");
 }
 
 void	ft_rra(t_stack **stack_a)
@@ -67,6 +70,7 @@ void	ft_rra(t_stack **stack_a)
 		tmp->next = *stack_a;
 		*stack_a = tmp;
 	}
+	ft_printf("rra\n");
 }
 
 void	ft_rrb(t_stack **stack_b)
@@ -84,4 +88,5 @@ void	ft_rrb(t_stack **stack_b)
 		tmp->next = *stack_b;
 		*stack_b = tmp;
 	}
+	ft_printf("rrb\n");
 }
