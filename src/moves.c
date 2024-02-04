@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sa.c                                            :+:      :+:    :+:   */
+/*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 12:34:18 by alcarden          #+#    #+#             */
-/*   Updated: 2023/06/30 12:36:11 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/02/04 19:44:27 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include "./inc/push_swap.h"
 
 int	is_empty(t_stack *stack)
 {
@@ -34,7 +34,7 @@ void	push(t_stack *stack, int value)
 
 int	pop(t_stack *stack)
 {
-	if (isEmpty(stack))
+	if (is_empty(stack))
 	{
 		printf("Error: la pila está vacía.\n");
 		return (-1);

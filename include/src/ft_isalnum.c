@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_swap.h                                     :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/30 12:02:18 by alcarden          #+#    #+#             */
-/*   Updated: 2023/06/30 14:48:49 by alcarden         ###   ########.fr       */
+/*   Created: 2023/04/18 18:55:24 by alcarden          #+#    #+#             */
+/*   Updated: 2023/04/20 11:40:52 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PUSH_SWAP_H
-# define FT_PUSH_SWAP_H
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
+#include "libft.h"
 
-# define MAX_STACK_SIZE 100
-
-typedef struct s_stack
+int	ft_isalnum(int c)
 {
-	int	data[MAX_STACK_SIZE];
-	int	top;
-}	t_stack;
-
-#endif
+	if (ft_isalpha(c) == 1 || ft_isdigit(c) == 1)
+	{
+		return (1);
+	}
+	return (0);
+}

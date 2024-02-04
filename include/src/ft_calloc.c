@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/30 18:22:52 by alcarden          #+#    #+#             */
-/*   Updated: 2023/06/30 18:22:56 by alcarden         ###   ########.fr       */
+/*   Created: 2023/04/20 13:44:40 by alcarden          #+#    #+#             */
+/*   Updated: 2023/04/20 14:02:17 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
+#include "libft.h"
+#include <stdlib.h>
 
-void	ft_swap(int *a, int *b)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	int	tmp;
+	size_t	i;
+	char	*ptr;
 
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
+	i = 0;
+	ptr = malloc(nmemb * size);
+	if (ptr)
+	{
+		while (i < nmemb * size)
+		{
+			ptr[i] = 0;
+			i++;
+		}
+	}
+	return (ptr);
 }
