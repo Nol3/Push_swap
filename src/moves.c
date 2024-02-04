@@ -6,50 +6,66 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 12:34:18 by alcarden          #+#    #+#             */
-/*   Updated: 2024/02/04 19:44:27 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/02/04 20:48:11 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./inc/push_swap.h"
 
-int	is_empty(t_stack *stack)
+void	ft_sb(t_stack **stack_b)
 {
-	return (stack->top == -1);
-}
+	t_stack	*tmp;
 
-int	is_full(t_stack *stack)
-{
-	return (stack->top == MAX_STACK_SIZE - 1);
-}
-
-void	push(t_stack *stack, int value)
-{
-	if (isFull(stack))
+	if (stack_b && (*stack_b)->next)
 	{
-		printf("Error: la pila está llena.\n");
-		return ;
+		tmp = (*stack_b)->next;
+		(*stack_b)->next = tmp->next;
+		tmp->next = *stack_b;
+		*stack_b = tmp;
 	}
-	stack->data[++stack->top] = value;
 }
 
-int	pop(t_stack *stack)
+void	ft_sa(t_stack **stack_a)
 {
-	if (is_empty(stack))
+	t_stack	*tmp;
+
+	if (stack_a && (*stack_a)->next)
 	{
-		printf("Error: la pila está vacía.\n");
-		return (-1);
+		tmp = (*stack_a)->next;
+		(*stack_a)->next = tmp->next;
+		tmp->next = *stack_a;
+		*stack_a = tmp;
 	}
-	return (stack->data[stack->top--]);
 }
 
-void	sa(t_stack *stack)
+void	ft_ss(t_stack **stack_a, t_stack **stack_b)
 {
-	int	temp;
+	ft_sa(stack_a);
+	ft_sb(stack_b);
+}
 
-	if (stack->top >= 1)
+void	ft_pa(t_stack **stack_a, t_stack **stack_b)
+{
+	t_stack	*tmp;
+
+	if (stack_b && *stack_b)
 	{
-		temp = stack->data[stack->top];
-		stack->data[stack->top] = stack->data[stack->top - 1];
-		stack->data[stack->top - 1] = temp;
+		tmp = *stack_b;
+		*stack_b = (*stack_b)->next;
+		tmp->next = *stack_a;
+		*stack_a = tmp;
+	}
+}
+
+void	ft_pb(t_stack **stack_a, t_stack **stack_b)
+{
+	t_stack	*tmp;
+
+	if (stack_a && *stack_a)
+	{
+		tmp = *stack_a;
+		*stack_a = (*stack_a)->next;
+		tmp->next = *stack_b;
+		*stack_b = tmp;
 	}
 }
