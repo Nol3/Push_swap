@@ -6,11 +6,11 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 19:47:24 by alcarden          #+#    #+#             */
-/*   Updated: 2024/02/04 21:21:17 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/02/06 19:18:52 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./inc/push_swap.h"
+#include "../inc/push_swap.h"
 
 t_stack	ft_ra(t_stack **stack_a)
 {
@@ -52,8 +52,8 @@ t_stack	ft_rb(t_stack **stack_b)
 
 t_stacks	ft_rr(t_stacks *stacks)
 {
-	ft_ra(stacks->stack_a);
-	ft_rb(stacks->stack_b);
+	ft_ra(&stacks->stack_a);
+	ft_rb(&stacks->stack_b);
 	ft_printf("rr\n");
 	return (*stacks);
 }

@@ -6,9 +6,9 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 19:42:17 by alcarden          #+#    #+#             */
-/*   Updated: 2024/02/04 20:57:02 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/02/06 19:20:46 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./inc/push_swap.h"
+//#include "../inc/push_swap.h"
 

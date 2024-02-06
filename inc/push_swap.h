@@ -6,12 +6,13 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 12:02:18 by alcarden          #+#    #+#             */
-/*   Updated: 2024/02/04 21:22:59 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/02/06 19:36:59 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+# include "../include/inc/libft.h"
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
@@ -34,10 +35,10 @@ typedef struct s_stacks
 	int				sizeb;
 }					t_stacks;
 
-
-
 //main.c
-void		ft_init_stacks(t_stacks *stacks);
+void		ft_print_stack(t_stack *stack);
+void		ft_add_to_stack(t_stack **stack, int new_value);
+void		ft_init_stacks(t_stack **stack);
 
 //moves.c
 t_stack		ft_sb(t_stack **stack_b);
@@ -57,7 +58,8 @@ t_stack		ft_rrb(t_stack **stack_b);
 t_stacks	ft_rrr(t_stacks *stacks);
 
 //parse.c
-void		ft_parse_args(int argc, char **argv, t_stack *stack_a);
+void		ft_stack_add_back(t_stack **lst, t_stack *new);
+void		ft_parse_args(int argc, char **argv, t_stack **stack_a);
 
 //push_swap.c
 

@@ -6,11 +6,11 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 12:34:18 by alcarden          #+#    #+#             */
-/*   Updated: 2024/02/04 21:18:29 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/02/06 19:18:34 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./inc/push_swap.h"
+#include "../inc/push_swap.h"
 
 t_stack	ft_sb(t_stack **stack_b)
 {
@@ -22,8 +22,8 @@ t_stack	ft_sb(t_stack **stack_b)
 		(*stack_b)->next = tmp->next;
 		tmp->next = *stack_b;
 		*stack_b = tmp;
+		ft_printf("sb\n");
 	}
-	ft_printf("sb\n");
 	return (**stack_b);
 }
 
@@ -44,8 +44,8 @@ t_stack	ft_sa(t_stack **stack_a)
 
 t_stacks	ft_ss(t_stacks *stacks)
 {
-	ft_sa(stacks->stack_a);
-	ft_sb(stacks->stack_b);
+	ft_sa(&stacks->stack_a);
+	ft_sb(&stacks->stack_b);
 	ft_printf("ss\n");
 	return (*stacks);
 }
