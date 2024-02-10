@@ -6,7 +6,7 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 19:41:09 by alcarden          #+#    #+#             */
-/*   Updated: 2024/02/06 19:46:03 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/02/10 20:03:16 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,10 @@ void	ft_stack_add_back(t_stack **lst, t_stack *new)
 			last = last->next;
 		last->next = new;
 	}
+	(*stack)->is_empty = false;
 }
 
-void	ft_parse_args(int argc, char **argv, t_stack **stack_a)
+void	ft_parse_args(int argc, char **argv, t_stacks *stacks)
 {
 	int	i;
 	int	j;
@@ -56,7 +57,7 @@ void	ft_parse_args(int argc, char **argv, t_stack **stack_a)
 			if (ft_isdigit(argv[i][j]) || argv[i][j] == '-')
 			{
 				tmp = ft_atoi(&argv[i][j]);
-				ft_stack_add_back(stack_a, ft_new(tmp));
+				ft_stack_add_back(&stacks->stack_a, ft_new(tmp));
 				while (ft_isdigit(argv[i][j]) || argv[i][j] == '-')
 					j++;
 			}

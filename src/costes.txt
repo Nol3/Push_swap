@@ -1,0 +1,32 @@
+//usar funciones en base al coste de ordenación
+pa -> (CA = 0, CB = 0)
+rr -> (CA > 0, CB > 0)
+rrr -> (CA < 0, CB < 0)
+rra -> (CA < 0, CB <= 0)
+ra -> (CA > 0, CB <= 0)
+rrb -> (CA = 0, CB < 0)
+rb -> (CA = 0, CB > 0)
+
+	- Para empezar:
+		El stack a contiene una cantidad aleatoria de números positivos y/o negativos,
+		nunca duplicados.
+	- El stack b está vacío.
+
+	//ft_pb(&stacks);
+	//ft_pb(&stacks);
+	//ft_pb(&stacks);
+
+	// moves.c
+	// ft_sa(&stacks.stack_a);
+	// ft_sb(&stacks.stack_b);
+	// ft_ss(&stacks);
+	// ft_pa(&stacks);
+	// ft_pb(&stacks);
+	// moves2.c
+	// ft_ra(&stacks.stack_a);
+	// ft_rb(&stacks.stack_b);
+	// ft_rr(&stacks);
+	// ft_rra(&stacks.stack_a);
+	// ft_rrb(&stacks.stack_b);
+	// moves3.c
+	// ft_rrr(&stacks);
