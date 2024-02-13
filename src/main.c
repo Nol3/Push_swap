@@ -6,7 +6,7 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 19:41:27 by alcarden          #+#    #+#             */
-/*   Updated: 2024/02/10 19:56:51 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/02/13 17:56:37 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	main(int argc, char **argv)
 	// Aquí iría el algoritmo de ordenación (calculo de costes).
 	while (!is_empty(stacks.stack_a))
 	{
-		if (stack_top(stacks.stack_a) < stack_top(stacks.stack_b))
+		if (stacks.stack_a->content < stacks.stack_b->content)
 		{
 			ft_pb(&stacks);
 			coste_total += coste_pb();

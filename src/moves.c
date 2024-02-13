@@ -6,7 +6,7 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 12:34:18 by alcarden          #+#    #+#             */
-/*   Updated: 2024/02/10 20:05:09 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/02/13 18:14:15 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,10 @@ t_stacks	ft_pa(t_stacks *stacks)
 	{
 		tmp = stacks->stack_b;
 		stacks->stack_b = (stacks->stack_b)->next;
+		stacks->stack_b->size--; // Decrementar size de stack_b
 		tmp->next = stacks->stack_a;
 		stacks->stack_a = tmp;
+		stacks->stack_a->size++; // Incrementar size de stack_a
 		ft_printf("pa\n");
 	}
 	return (*stacks);
@@ -73,10 +75,12 @@ t_stacks	ft_pb(t_stacks *stacks)
 	{
 		tmp = stacks->stack_a;
 		stacks->stack_a = (stacks->stack_a)->next;
+		stacks->stack_a->size--; // Decrementar size de stack_a
 		tmp->next = stacks->stack_b;
 		stacks->stack_b = tmp;
+		stacks->stack_b->size++; // Incrementar size de stack_b
 		ft_printf("pb\n");
-		stacks->stack_b->is_empty = false;
+		// No es necesario actualizar is_empty aquí, ya lo hiciste
 	}
 	return (*stacks);
 }

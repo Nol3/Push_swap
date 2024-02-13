@@ -6,7 +6,7 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 19:41:09 by alcarden          #+#    #+#             */
-/*   Updated: 2024/02/10 20:03:16 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/02/13 18:13:20 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	ft_stack_add_back(t_stack **lst, t_stack *new)
 	if (!*lst)
 	{
 		*lst = new;
+		(*lst)->size = 1; // Actualizar size si la pila estaba vacía
 	}
 	else
 	{
@@ -38,8 +39,8 @@ void	ft_stack_add_back(t_stack **lst, t_stack *new)
 		while (last->next)
 			last = last->next;
 		last->next = new;
+		(*lst)->size++; // Incrementar size
 	}
-	(*stack)->is_empty = false;
 }
 
 void	ft_parse_args(int argc, char **argv, t_stacks *stacks)

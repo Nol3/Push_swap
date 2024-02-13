@@ -6,7 +6,7 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 12:02:18 by alcarden          #+#    #+#             */
-/*   Updated: 2024/02/10 19:54:53 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/02/13 18:26:14 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include <stdio.h>
 # include <stdbool.h>
 
+#define PA 1
+#define PB 2
+
 typedef struct s_stack
 {
 	long int		content;
@@ -27,6 +30,7 @@ typedef struct s_stack
 	int				cost_b;
 	struct s_stack	*next;
 	bool			is_empty;
+	int				size;
 }					t_stack;
 
 typedef struct s_stacks

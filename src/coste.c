@@ -6,7 +6,7 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 17:28:52 by alcarden          #+#    #+#             */
-/*   Updated: 2024/02/10 18:05:42 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/02/13 18:11:49 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ int	coste_pb(void)
 
 int	coste_ra(t_stack *stack)
 {
-	return (stack_size(stack)); // Coste por mover cada elemento
+	return stack->size; // Coste por mover cada elemento
 }
