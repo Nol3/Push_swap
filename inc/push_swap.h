@@ -6,7 +6,7 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 12:02:18 by alcarden          #+#    #+#             */
-/*   Updated: 2024/02/13 18:26:14 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/02/26 22:58:51 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@
 # include <stdio.h>
 # include <stdbool.h>
 
-#define PA 1
-#define PB 2
-
 typedef struct s_stack
 {
 	long int		content;
@@ -29,8 +26,6 @@ typedef struct s_stack
 	int				cost_a;
 	int				cost_b;
 	struct s_stack	*next;
-	bool			is_empty;
-	int				size;
 }					t_stack;
 
 typedef struct s_stacks
@@ -41,51 +36,62 @@ typedef struct s_stacks
 	int				sizeb;
 }					t_stacks;
 
-//coste_total.c
-int			ft_coste_total(int operaciones[], int longitud);
+//clean.c
+char		**ft_free_str(char **str);
+int			ft_split_size(char **str);
+t_stack		*ft_clean(t_stack *stack, char **nums);
+t_stack		*ft_clean_stack(t_stack *stack);
 
-//costes.c
-int			coste_sa(void);
-int			coste_sb(void);
-int			coste_pa(void);
-int			coste_pb(void);
-int			coste_ra(t_stack *stack);
+//cost.c
+int			ft_pos(int n);
+t_stack		*ft_cheapest(t_stack *stack_b);
+int			ft_is_sort(t_stack *stack);
+t_stacks	ft_calculate_cost(t_stacks stacks);
 
-//costes2.c
-int			coste_rb(t_stack *stack);
-int			coste_rr(t_stack *stack_a, t_stack *stack_b);
-int			coste_rra(t_stack *stack);
-int			coste_rrb(t_stack *stack);
-int			coste_rrr(t_stack *stack_a, t_stack *stack_b);
+//moves_a.c
+t_stack		*ft_sa(t_stack *stack_a, int flag);
+t_stacks	ft_pa(t_stacks stacks);
+t_stack		*ft_ra(t_stack *stack_a, int flag);
+t_stack		*ft_rra(t_stack *stack_a, int flag);
 
-
-//main.c
-void		ft_print_stack(t_stack *stack);
-void		ft_add_to_stack(t_stack **stack, int new_value);
-void		ft_init_stacks(t_stacks *stacks);
-bool		is_empty(t_stack *stack);
-
-//moves.c
-t_stack		ft_sb(t_stack **stack_b);
-t_stack		ft_sa(t_stack **stack_a);
-t_stacks	ft_ss(t_stacks *stacks);
-t_stacks	ft_pa(t_stacks *stacks);
-t_stacks	ft_pb(t_stacks *stacks);
-
-//moves2.c
-t_stack		ft_ra(t_stack **stack_a);
-t_stack		ft_rb(t_stack **stack_b);
-t_stacks	ft_rr(t_stacks *stacks);
-t_stack		ft_rra(t_stack **stack_a);
-t_stack		ft_rrb(t_stack **stack_b);
+//moves_b.c
+t_stack		*ft_sb(t_stack *stack_b, int flag);
 
 //moves3.c
 t_stacks	ft_rrr(t_stacks *stacks);
+t_stacks	ft_pb(t_stacks stacks);
+t_stack		*ft_rb(t_stack *stack_b, int flag);
+t_stack		*ft_rrb(t_stack *stack_b, int flag);
+
+//moves_doubles.c
+t_stacks	ft_ss(t_stacks stacks);
+t_stacks	ft_rr(t_stacks stacks);
+t_stacks	ft_rrr(t_stacks stacks);
+int			ft_get_size(t_stack *stack);
 
 //parse.c
-void		ft_stack_add_back(t_stack **lst, t_stack *new);
-void		ft_parse_args(int argc, char **argv, t_stacks *stacks);
+t_stacks	ft_sort_two(t_stacks stacks);
+int			ft_max_int(t_stack *stack);
+int			ft_parse(t_stack *stack);
+int			ft_error(t_stack *stack);
 
-//push_swap.c
+//util_sorting.c
+t_stack		*ft_sort_three(t_stack *stack_a);
+t_stacks	ft_sort(t_stacks stacks);
+t_stack		*ft_clean_stack(t_stack *stack);
+t_stacks	ft_move_up(t_stacks stacks, t_stack *cheapest);
+int			ft_get_pos(t_stack *stack_a, int num, int target, int maxint);
+t_stacks	ft_set_target(t_stacks stacks);
+
+//util_stack.c
+t_stack		*ft_init_a(int size, char **numbers, t_stack *stack_a);
+t_stack		*ft_init_a2(char **numbers, t_stack *stack_a);
+int			ft_is_sort(t_stack *stack);
+t_stack		*ft_clean_stack(t_stack *stack);
+
+//util.c
+int			ft_check_follow(char **argv);
+int			ft_check_chars(char **argv);
+void		ft_set_position(t_stack **stack)
 
 #endif

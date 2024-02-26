@@ -6,7 +6,7 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 13:16:41 by alcarden          #+#    #+#             */
-/*   Updated: 2023/10/25 19:34:41 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/02/26 22:14:34 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct s_list
 }	t_list;
 
 int			ft_atoi(const char *str);
+long int	ft_atol(const char *c);
 int			ft_isalnum(int c);
 int			ft_isalpha(int c);
 int			ft_isascii(int c);

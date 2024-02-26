@@ -6,65 +6,72 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 19:41:09 by alcarden          #+#    #+#             */
-/*   Updated: 2024/02/13 18:13:20 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/02/26 22:36:36 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-t_stack	*ft_new(int content)
+t_stacks	ft_sort_two(t_stacks stacks)
 {
-	t_stack	*new;
-
-	new = malloc(sizeof(t_stack));
-	if (!new)
-		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
+	if (stacks.stack_a->content > stacks.stack_a->next->content)
+		stacks.stack_a = ft_sa(stacks.stack_a, 1);
+	return (stacks);
 }
 
-void	ft_stack_add_back(t_stack **lst, t_stack *new)
+int	ft_max_int(t_stack *stack)
 {
-	t_stack	*last;
+	t_stack	*tmp;
 
-	if (!*lst)
+	tmp = stack;
+	while (tmp)
 	{
-		*lst = new;
-		(*lst)->size = 1; // Actualizar size si la pila estaba vacía
+		if (tmp->content > 2147483647 || tmp->content < -2147483648)
+			return (0);
+		tmp = tmp->next;
 	}
-	else
-	{
-		last = *lst;
-		while (last->next)
-			last = last->next;
-		last->next = new;
-		(*lst)->size++; // Incrementar size
-	}
+	return (1);
 }
 
-void	ft_parse_args(int argc, char **argv, t_stacks *stacks)
+int	ft_parse(t_stack *stack)
 {
-	int	i;
-	int	j;
-	int	tmp;
+	t_stack	*tmp;
+	t_stack	*tmp2;
+	int		zero;
 
-	i = 1;
-	while (i < argc)
+	tmp = stack;
+	zero = 0;
+	while (tmp)
 	{
-		j = 0;
-		while (argv[i][j])
+		tmp2 = stack->next;
+		if (tmp->content == 0 || tmp->content == -0 || tmp->content == +0)
+			zero++;
+		while (tmp2)
 		{
-			if (ft_isdigit(argv[i][j]) || argv[i][j] == '-')
-			{
-				tmp = ft_atoi(&argv[i][j]);
-				ft_stack_add_back(&stacks->stack_a, ft_new(tmp));
-				while (ft_isdigit(argv[i][j]) || argv[i][j] == '-')
-					j++;
-			}
-			else
-				j++;
+			if (tmp2->content == tmp->content && tmp2->act_pos != tmp->act_pos)
+				return (0);
+			tmp2 = tmp2->next;
 		}
-		i++;
+		tmp = tmp->next;
 	}
+	if (zero > 1)
+		return (0);
+	return (1);
+}
+
+int	ft_error(t_stack *stack)
+{
+	if (ft_parse(stack) == 0)
+	{
+		ft_printf("[ERROR] Wrong numbers imput\n");
+		stack = ft_clean_stack(stack);
+		return (0);
+	}
+	if (ft_max_int(stack) == 0)
+	{
+		ft_printf("[ERROR] Higher or lower values than INT included \n");
+		stack = ft_clean_stack(stack);
+		return (0);
+	}
+	return (1);
 }

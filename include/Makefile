@@ -6,13 +6,14 @@
 #    By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/24 19:01:46 by alcarden          #+#    #+#              #
-#    Updated: 2023/10/25 19:37:32 by alcarden         ###   ########.fr        #
+#    Updated: 2024/02/26 22:15:52 by alcarden         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 TARGET = $(BIN_DIR)/libft.a
 
 FILES = ft_atoi.c\
+		ft_atol.c\
 		ft_isalnum.c\
 		ft_isalpha.c\
 		ft_isascii.c\
