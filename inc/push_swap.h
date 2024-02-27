@@ -6,7 +6,7 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 12:02:18 by alcarden          #+#    #+#             */
-/*   Updated: 2024/02/26 22:58:51 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/02/27 18:41:56 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,9 @@ t_stack		*ft_rra(t_stack *stack_a, int flag);
 
 //moves_b.c
 t_stack		*ft_sb(t_stack *stack_b, int flag);
-
-//moves3.c
-t_stacks	ft_rrr(t_stacks *stacks);
 t_stacks	ft_pb(t_stacks stacks);
-t_stack		*ft_rb(t_stack *stack_b, int flag);
-t_stack		*ft_rrb(t_stack *stack_b, int flag);
+t_stack	*ft_rb(t_stack *stack_b, int flag);
+t_stack	*ft_rrb(t_stack *stack_b, int flag);
 
 //moves_doubles.c
 t_stacks	ft_ss(t_stacks stacks);
@@ -78,7 +75,6 @@ int			ft_error(t_stack *stack);
 //util_sorting.c
 t_stack		*ft_sort_three(t_stack *stack_a);
 t_stacks	ft_sort(t_stacks stacks);
-t_stack		*ft_clean_stack(t_stack *stack);
 t_stacks	ft_move_up(t_stacks stacks, t_stack *cheapest);
 int			ft_get_pos(t_stack *stack_a, int num, int target, int maxint);
 t_stacks	ft_set_target(t_stacks stacks);
@@ -86,12 +82,10 @@ t_stacks	ft_set_target(t_stacks stacks);
 //util_stack.c
 t_stack		*ft_init_a(int size, char **numbers, t_stack *stack_a);
 t_stack		*ft_init_a2(char **numbers, t_stack *stack_a);
-int			ft_is_sort(t_stack *stack);
-t_stack		*ft_clean_stack(t_stack *stack);
 
 //util.c
 int			ft_check_follow(char **argv);
 int			ft_check_chars(char **argv);
-void		ft_set_position(t_stack **stack)
+void		ft_set_position(t_stack **stack);
 
 #endif

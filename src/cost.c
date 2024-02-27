@@ -6,7 +6,7 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 22:43:09 by alcarden          #+#    #+#             */
-/*   Updated: 2024/02/26 22:43:28 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/02/27 18:40:24 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,6 @@ t_stack	*ft_cheapest(t_stack *stack_b)
 		tmp = tmp->next;
 	}
 	return (cheapest);
-}
-
-int	ft_is_sort(t_stack *stack)
-{
-	t_stack	*tmp;
-
-	tmp = stack;
-	while (tmp)
-	{
-		if (tmp->next && tmp->content > tmp->next->content)
-			return (0);
-		tmp = tmp->next;
-	}
-	return (1);
 }
 
 t_stacks	ft_calculate_cost(t_stacks stacks)

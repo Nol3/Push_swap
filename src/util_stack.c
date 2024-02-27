@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   util_2.c                                           :+:      :+:    :+:   */
+/*   util_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 22:21:32 by alcarden          #+#    #+#             */
-/*   Updated: 2024/02/26 22:23:56 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/02/27 18:41:24 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,17 +79,4 @@ int	ft_is_sort(t_stack *stack)
 		tmp = tmp->next;
 	}
 	return (1);
-}
-
-t_stack	*ft_clean_stack(t_stack *stack)
-{
-	t_stack	*tmp;
-
-	while (stack && stack->next)
-	{
-		tmp = stack;
-		stack = stack->next;
-		free(tmp);
-	}
-	return (NULL);
 }

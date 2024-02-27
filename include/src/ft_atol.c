@@ -6,11 +6,11 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 22:13:01 by alcarden          #+#    #+#             */
-/*   Updated: 2024/02/26 22:15:37 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/02/27 18:42:37 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/inc/libft.h"
+#include "libft.h"
 
 long int	ft_atol(const char *c)
 {

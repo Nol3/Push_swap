@@ -6,7 +6,7 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 22:24:25 by alcarden          #+#    #+#             */
-/*   Updated: 2024/02/26 22:39:01 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/02/27 18:38:59 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,19 +66,6 @@ t_stacks	ft_sort(t_stacks stacks)
 			stacks.stack_a = ft_ra(stacks.stack_a, 1);
 	}
 	return (stacks);
-}
-
-t_stack	*ft_clean_stack(t_stack *stack)
-{
-	t_stack	*tmp;
-
-	while (stack && stack->next)
-	{
-		tmp = stack;
-		stack = stack->next;
-		free(tmp);
-	}
-	return (NULL);
 }
 
 t_stacks	ft_move_up(t_stacks stacks, t_stack *cheapest)
