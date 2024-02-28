@@ -6,7 +6,7 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 22:19:12 by alcarden          #+#    #+#             */
-/*   Updated: 2024/02/26 22:20:12 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/02/27 21:27:25 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_check_follow(char **argv)
 					|| (argv[cnt][cnt2 + 1] == '-' || argv[cnt][cnt2
 						+ 1] == '+'))
 				{
-					ft_printf("[ERROR] Wrong Imput\n");
+					ft_printf("Error: Número/s con caracteres invalidos\n");
 					return (0);
 				}
 			}
@@ -58,7 +58,7 @@ int	ft_check_chars(char **argv)
 				{
 					if (argv[cnt][cnt2] != ' ')
 					{
-						ft_printf("[ERROR] Non numerical included\n");
+						ft_printf("Error: caracteres no númericos\n");
 						return (0);
 					}
 				}
