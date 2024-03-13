@@ -6,11 +6,16 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 19:41:27 by alcarden          #+#    #+#             */
-/*   Updated: 2024/02/26 22:37:36 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/03/13 02:46:04 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
+
+// void ft_leak(void)
+// {
+// 	system("leaks -q push_swap");
+// }
 
 int	main(int argc, char *argv[])
 {

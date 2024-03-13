@@ -6,18 +6,11 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 19:41:09 by alcarden          #+#    #+#             */
-/*   Updated: 2024/02/27 21:27:20 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/03/13 00:37:08 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
-
-t_stacks	ft_sort_two(t_stacks stacks)
-{
-	if (stacks.stack_a->content > stacks.stack_a->next->content)
-		stacks.stack_a = ft_sa(stacks.stack_a, 1);
-	return (stacks);
-}
 
 int	ft_max_int(t_stack *stack)
 {

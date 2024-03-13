@@ -6,7 +6,7 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 22:42:03 by alcarden          #+#    #+#             */
-/*   Updated: 2024/02/27 21:26:56 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/03/13 02:41:58 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ t_stack	*ft_clean_stack(t_stack *stack)
 {
 	t_stack	*tmp;
 
-	while (stack && stack->next)
+	while (stack)
 	{
 		tmp = stack;
 		stack = stack->next;

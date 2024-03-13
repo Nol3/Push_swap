@@ -6,7 +6,7 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 22:40:30 by alcarden          #+#    #+#             */
-/*   Updated: 2024/02/27 21:27:11 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/03/13 00:35:50 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,4 @@ t_stacks	ft_rrr(t_stacks stacks)
 	ft_set_position(&stacks.stack_a);
 	ft_set_position(&stacks.stack_b);
 	return (stacks);
-}
-
-int	ft_get_size(t_stack *stack)
-{
-	int	cnt;
-
-	cnt = 0;
-	while (stack)
-	{
-		cnt++;
-		stack = stack->next;
-	}
-	return (cnt);
 }

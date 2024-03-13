@@ -6,7 +6,7 @@
 /*   By: alcarden <alcarden@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 22:24:25 by alcarden          #+#    #+#             */
-/*   Updated: 2024/02/27 21:27:32 by alcarden         ###   ########.fr       */
+/*   Updated: 2024/03/13 01:18:22 by alcarden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,19 @@ t_stack	*ft_sort_three(t_stack *stack_a)
 	n = stack_a->content;
 	m = stack_a->next->content;
 	l = stack_a->next->next->content;
-	if (n > m && m < l && n < l)
+	if (is_case_1(n, m, l))
 		stack_a = ft_sa(stack_a, 1);
-	else if (n < m && m > l && n > l)
-		stack_a = ft_rra(stack_a, 1);
-	else if (n > m && m > l)
+	else if (is_case_2(n, m, l) || is_case_5(n, m, l))
 	{
-		stack_a = ft_sa(stack_a, 1);
 		stack_a = ft_rra(stack_a, 1);
+		if (is_case_5(n, m, l))
+			stack_a = ft_sa(stack_a, 1);
 	}
-	else if (n > m && m < l && n > l)
-		stack_a = ft_ra(stack_a, 1);
-	else if (n < m && m > l && n < l)
+	else if (is_case_3(n, m, l) || is_case_4(n, m, l))
 	{
-		stack_a = ft_rra(stack_a, 1);
-		stack_a = ft_sa(stack_a, 1);
+		if (is_case_3(n, m, l))
+			stack_a = ft_sa(stack_a, 1);
+		stack_a = ft_ra(stack_a, 1);
 	}
 	return (stack_a);
 }
